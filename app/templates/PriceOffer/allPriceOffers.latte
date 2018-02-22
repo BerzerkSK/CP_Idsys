@@ -1,0 +1,20 @@
+{block content}
+    <div>
+        <table class="table table-striped">
+            <th>Číslo</th>
+            <th>Dátum</th>
+            <th>Firma</th>
+            <th>Klient</th>
+            <th>Stav</th>
+            <th></th>
+            <tr n:foreach="$priceOffers as $priceOffer">
+                <td>{$priceOffer->number}</td>
+                <td>{$priceOffer->date|date:'%d.%m.%Y'}</td>
+                <td>{$priceOffer->company}</td>
+                <td>{$priceOffer->client}</td>
+                <td>{$symptom[$priceOffer->symptom]}</td>
+                <td><a n:href='PriceOffer:addPriceOffer $priceOffer->id'>Upravit</a>/<a n:href='PriceOffer:deletePriceOffer $priceOffer->id'>Zmazat</a></td>
+            </tr>
+        </table>
+    </div>
+{/block}

@@ -1,0 +1,8 @@
+{block content}
+    {include '..\components\priceOfferForm.latte'}
+    {ifset $id}
+        {if $id>0}
+            <a n:href="ItemPriceOffer:addItem">Pridaj položku cenovej ponuky</a>
+        {/if}
+    {/ifset}
+{/block}
